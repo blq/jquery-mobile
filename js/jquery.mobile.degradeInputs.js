@@ -24,13 +24,13 @@ $.mobile.page.prototype.options.degradeInputs = {
 //auto self-init widgets
 $( document ).bind( "pagecreate create", function( e ){
 
-	var page = $(e.target).closest(':jqmData(role="page")').data("page"), options;
+	var page = $.mobile.closestPageData( $(e.target) );
 
 	if( !page ) {
 		return;
 	}
 
-	options = page.options;
+	var options = page.options;
 
 	// degrade inputs to avoid poorly implemented native functionality
 	$( e.target ).find( "input" ).not( page.keepNativeSelector() ).each(function() {

@@ -56,7 +56,9 @@ $.mobile.browser.ie = (function() {
 	div = document.createElement( "div" ),
 	a = div.all || [];
 
-	while ( div.innerHTML = "<!--[if gt IE " + ( ++v ) + "]><br><![endif]-->", a[ 0 ] );
+	// added {} to silence closure compiler warnings. registering my dislike of all things
+	// overly clever here for future reference
+	while ( div.innerHTML = "<!--[if gt IE " + ( ++v ) + "]><br><![endif]-->", a[ 0 ] ){};
 
 	return v > 4 ? v : !v;
 })();
@@ -66,7 +68,7 @@ $.extend( $.support, {
 	orientation: "orientation" in window && "onorientationchange" in window,
 	touch: "ontouchend" in document,
 	cssTransitions: "WebKitTransitionEvent" in window,
-	pushState: "pushState" in history && "replaceState" in history,
+	pushState: "pushState" in window.history && "replaceState" in window.history,
 	mediaquery: $.mobile.media( "only all" ),
 	cssPseudoElement: !!propExists( "content" ),
 	touchOverflow: !!propExists( "overflowScrolling" ),
