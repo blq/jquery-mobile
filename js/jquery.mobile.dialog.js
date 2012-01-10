@@ -1,7 +1,9 @@
-/*
-* "dialog" plugin.
-*/
+//>>excludeStart("jqmBuildExclude", pragmas.jqmBuildExclude);
+//>>description: Degrades inputs to another type after custom enhancements are made.
+//>>label: Dialog-style Pages
 
+define( [ "jquery.mobile.widget" ], function() {
+//>>excludeEnd("jqmBuildExclude");
 (function( $, window, undefined ) {
 
 $.widget( "mobile.dialog", $.mobile.widget, {
@@ -75,3 +77,6 @@ $( document ).delegate( $.mobile.dialog.prototype.options.initSelector, "pagecre
 });
 
 })( jQuery, this );
+//>>excludeStart("jqmBuildExclude", pragmas.jqmBuildExclude);
+});
+//>>excludeEnd("jqmBuildExclude");

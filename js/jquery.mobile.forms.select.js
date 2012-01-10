@@ -1,7 +1,9 @@
-/*
-* "selectmenu" plugin
-*/
+//>>excludeStart("jqmBuildExclude", pragmas.jqmBuildExclude);
+//>>description: Consistent styling for native select menus.
+//>>label: Enhanced Native Selects
 
+define( [ "jquery.mobile.core", "jquery.mobile.widget", "jquery.mobile.buttonMarkup" ], function() {
+//>>excludeEnd("jqmBuildExclude");
 (function( $, undefined ) {
 
 $.widget( "mobile.selectmenu", $.mobile.widget, {
@@ -209,3 +211,6 @@ $( document ).bind( "pagecreate create", function( e ){
 	$.mobile.selectmenu.prototype.enhanceWithin( e.target );
 });
 })( jQuery );
+//>>excludeStart("jqmBuildExclude", pragmas.jqmBuildExclude);
+});
+//>>excludeEnd("jqmBuildExclude");

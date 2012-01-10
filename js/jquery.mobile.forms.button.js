@@ -1,7 +1,9 @@
-/*
-* "button" plugin - links that proxy to native input/buttons
-*/
+//>>excludeStart("jqmBuildExclude", pragmas.jqmBuildExclude);
+//>>description: Form Buttons
+//>>label: links that proxy to native input/buttons
 
+define( [ "jquery.mobile.widget", "jquery.mobile.buttonMarkup"  ], function() {
+//>>excludeEnd("jqmBuildExclude");
 (function( $, undefined ) {
 
 $.widget( "mobile.button", $.mobile.widget, {
@@ -111,3 +113,6 @@ $( document ).bind( "pagecreate create", function( e ){
 });
 
 })( jQuery );
+//>>excludeStart("jqmBuildExclude", pragmas.jqmBuildExclude);
+});
+//>>excludeEnd("jqmBuildExclude");
