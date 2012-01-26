@@ -54,7 +54,7 @@ css: init
 	# ..... and then minify it
 	@@echo ${VER_MIN} > ${OUTPUT}/${STRUCTURE}.min.css
 	@@java -XX:ReservedCodeCacheSize=64m \
-		-jar build/yuicompressor-2.4.6.jar \
+		-jar build/yuicompressor-2.4.7.jar \
 		--type css ${OUTPUT}/${STRUCTURE}.compiled.css >> ${OUTPUT}/${STRUCTURE}.min.css
 	@@rm ${OUTPUT}/${STRUCTURE}.compiled.css
 	# ..... and then copy in the images
@@ -116,6 +116,9 @@ js: init
 	@@echo ${VER_MIN} > ${OUTPUT}/${NAME}.min.js
 	@@java -XX:ReservedCodeCacheSize=64m \
 		-jar build/google-compiler-20111003.jar \
+		--warning_level VERBOSE \
+		--externs build/externs/custom.js \
+		--externs build/externs/jquery-1.7.js \
 		--js ${OUTPUT}/${NAME}.js \
 		--js_output_file ${OUTPUT}/${NAME}.compiled.js
 	@@cat ${OUTPUT}/${NAME}.compiled.js >> ${OUTPUT}/${NAME}.min.js
