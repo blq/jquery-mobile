@@ -49,7 +49,7 @@ function validStyle( prop, value, check_vend ) {
 		check_vends = check_vend ? [ check_vend ] : vendors,
 		ret;
 
-	for( i = 0; i < check_vends.length; i++ ) {
+	for( var i = 0; i < check_vends.length; i++ ) {
 		check_style( check_vends[i] );
 	}
 	return !!ret;
@@ -106,7 +106,7 @@ $.extend( $.support, {
 	orientation: "orientation" in window && "onorientationchange" in window,
 	touch: "ontouchend" in document,
 	cssTransitions: "WebKitTransitionEvent" in window || validStyle( 'transition', 'height 100ms linear' ),
-	pushState: "pushState" in history && "replaceState" in history,
+	pushState: "pushState" in window.history && "replaceState" in window.history,
 	mediaquery: $.mobile.media( "only all" ),
 	cssPseudoElement: !!propExists( "content" ),
 	touchOverflow: !!propExists( "overflowScrolling" ),

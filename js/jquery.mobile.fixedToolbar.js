@@ -42,7 +42,7 @@ define( [ "jquery", "./jquery.mobile.widget", "./jquery.mobile.core", "./jquery.
 					// Opera Mini
 					( w.operamini && ({}).toString.call( w.operamini ) === "[object OperaMini]" )
 					||
-					( operammobilematch && omverson < 7458 )
+					( operammobilematch && omversion < 7458 )
 					||
 					//Android lte 2.1: Platform is Android and Webkit version is less than 533 (Android 2.2)
 					( ua.indexOf( "Android" ) > -1 && wkversion && wkversion < 533 )
