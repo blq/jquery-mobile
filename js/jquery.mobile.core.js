@@ -1,8 +1,10 @@
 //>>excludeStart("jqmBuildExclude", pragmas.jqmBuildExclude);
 //>>description: The base file for jQM
 //>>label: Core
+//>>group: core
+//>>required: true
 
-define( [ "jquery.mobile.widget" ], function() {
+define( [ "jquery", "text!../version.txt", "./jquery.mobile.widget" ], function( $, __version__ ) {
 //>>excludeEnd("jqmBuildExclude");
 (function( $, window, undefined ) {
 
@@ -10,6 +12,9 @@ define( [ "jquery.mobile.widget" ], function() {
 
 	// jQuery.mobile configurable options
 	$.mobile = $.extend( {}, {
+
+		// Version of the jQuery Mobile Framework
+		version: __version__,
 
 		// Namespace used framework-wide for data-attrs. Default is no namespace
 		ns: "",
@@ -38,10 +43,16 @@ define( [ "jquery.mobile.widget" ], function() {
 		linkBindingEnabled: true,
 
 		// Set default page transition - 'none' for no transitions
-		defaultPageTransition: "slide",
+		defaultPageTransition: "fade",
+		
+		// Set maximum window width for transitions to apply - 'false' for no limit
+		maxTransitionWidth: false,
 
 		// Minimum scroll distance that will be remembered when returning to a page
-		minScrollBack: 250,
+		minScrollBack: 10,
+		
+		// DEPRECATED: the following property is no longer in use, but defined until 2.0 to prevent conflicts
+		touchOverflowEnabled: false,
 
 		// Set default dialog transition - 'none' for no transitions
 		defaultDialogTransition: "pop",
