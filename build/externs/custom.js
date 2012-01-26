@@ -3,6 +3,11 @@
  */
 
 /**
+ * AMD
+ */
+var define;
+ 
+/**
  * == window.location. alias.
  * @type {!Location}
  */
