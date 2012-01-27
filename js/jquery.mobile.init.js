@@ -37,7 +37,7 @@ define( [ "jquery", "./jquery.mobile.core", "./jquery.mobile.navigation", "./jqu
 		$loader
 			.css({
 				top: $.support.scrollTop && $window.scrollTop() + $window.height() / 2 ||
-				activeBtn.length && activeBtn.offset().top || 100
+				/*activeBtn.length && activeBtn.offset().top ||*/ 100
 			});		
 	}
 	
