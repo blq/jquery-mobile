@@ -19,7 +19,7 @@ deploy: STRUCTURE = jquery.mobile.structure-${VER_OFFICIAL}
 # The CSS theme being used
 THEME = default
 
-RUN_JS = @@java -XX:ReservedCodeCacheSize=64m -classpath "build/js.jar;build/google-compiler-20111003.jar" org.mozilla.javascript.tools.shell.Main
+RUN_JS = @@java -XX:ReservedCodeCacheSize=64m -classpath "build/js.jar;build/google-compiler-custom_trunk.jar" org.mozilla.javascript.tools.shell.Main
 
 
 
@@ -115,7 +115,7 @@ js: init
 	# ..... and then minify it
 	@@echo ${VER_MIN} > ${OUTPUT}/${NAME}.min.js
 	@@java -XX:ReservedCodeCacheSize=64m \
-		-jar build/google-compiler-20111003.jar \
+		-jar build/google-compiler-custom_trunk.jar \
 		--warning_level VERBOSE \
 		--externs build/externs/custom.js \
 		--externs build/externs/jquery-1.7.js \
